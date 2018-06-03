@@ -1,0 +1,25 @@
+outputmacro: bot()
+$cs_token = #UNTOUCHED_INPUT
+$cs_control_main = ~control
+
+table: defaultbot (^name)
+^createfact(^name defaultbot defaultbot)
+DATA:
+bot
+
+topic: ~control system repeat ()
+u: ()
+	^nofail(TOPIC ^rejoinder())
+u: ()
+	^nofail(TOPIC ^respond(%topic))
+u: ()
+	@8 = ^keywordtopics()
+	^loop() {
+		$$topic = ^first(@8subject)
+		^nofail(TOPIC ^respond($$topic))
+		if (%response != 0) {
+			^end(LOOP)
+		}
+	}
+u: ()
+	^nofail(TOPIC ^respond(~fallback))
