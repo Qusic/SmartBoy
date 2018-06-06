@@ -1,37 +1,43 @@
 topic: ~self keep repeat random (bot 机器人)
 u: (是 [谁 哪位])
 是你大爷
-u: ("干 啥")
+u: (干 啥)
 噶哈呢
   a: ([不干 没事])
   那就好
 
 topic: ~wukong keep repeat random (wk wukong kywkl 悟空)
 u: (kywkl)
-吼，来wk吧！
-u: ([可以 来])
-吼，来wk吧！
+➡️ https://wukong.hlyue.com/test ⬅️
+u: (不 可以)
+为啥不可以
 u: ([修 修好 修得])
 wk都修不好了，这个世界会好吗？
   a: ([不 不会 没 没人])
   [唉][啧][我拒绝]
 
 topic: ~lol keep repeat random (yx 游戏)
-u: ([有 有没有 开 kk kkk kkkk kkkkk kkkkkk kkkkkkk kkkkkkkk])
-  听说有游戏？
-  a: ([等 等等])
-  [不能等了][我已经上了]
-  a: ([min])
-  1分钟都不能等了
-  a: (上 了)
-  正在飞速登陆
+u: ([有 有没有])
+听说有游戏？
+u: ([开 kk kkk kkkk kkkkk kkkkkk kkkkkkk kkkkkkkk])
+正在飞速登陆
+u: ([等 等等 min])
+[不能等了][我已经上了][1分钟都不能等了]
+u: (上 了)
+开开开
+
+topic: ~sleep keep repeat random (sm sml dsm dsml 失眠 sj 睡觉)
+u: ([sm dsm sml dsml])
+[睡你麻痹，起来嗨！][不如听听郭德纲报菜名]
+u: (<< [sb 上班] [sj 睡觉] >>)
+只要胆子大 天天都放假
 
 topic: ~js keep repeat random (js ts javascript typescript coffee coffeescript)
 u: ([好 厉害 "这种 操作"])
 [世界上最好的语言][人类的希望]
 u: ([好 厉害 "这种 操作"])
 [那你老人家还学得动吗？]
-  a: ([学不动 不行 不了 不])
+  a: ([学不动 不行 不了 不 算了])
   哦豁
   a: ([学得动 还行 可以])
   [ym大佬][666]
