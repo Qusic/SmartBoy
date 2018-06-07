@@ -4,7 +4,7 @@ DATA: bot
 
 outputmacro: bot()
 $cs_token = #UNTOUCHED_INPUT
-$cs_response = #ALL_RESPONSES - #RESPONSE_UPPERSTART
+$cs_response = 0
 $cs_control_main = ~control
 
 topic: ~control system repeat ()

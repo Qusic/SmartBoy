@@ -3,18 +3,36 @@ u: (是 [谁 哪位])
 是你大爷
 u: (干 啥)
 噶哈呢
-  a: ([不干 没事])
+  a: ([不 不干 没 没事])
   那就好
+u: (来 了)
+来了~
+  a: ([有失远迎 远迎 见谅])
+  客气~
+    b: (*)
+    得嘞~
 
 topic: ~wukong keep repeat random (wk wukong kywkl 悟空)
 u: (kywkl)
-➡️ https://wukong.hlyue.com/test ⬅️
+→ https://wukong.hlyue.com/test ←
 u: (不 可以)
 为啥不可以
 u: ([修 修好 修得])
 wk都修不好了，这个世界会好吗？
   a: ([不 不会 没 没人])
   [唉][啧][我拒绝]
+
+topic: ~dog keep repeat random (狗 犬 柴犬 柴狗 养狗)
+u: (撸 狗)
+不如直个播？
+  a: ([行 好])
+  敲碗等
+  a: ([等 等等 不 不行])
+  QAQ
+u: ([萌 太萌])
+是的！！！
+u: ([想 想养] * [养狗 养 狗])
+不如来云养狗 → https://twitter.com/shiba_teemo
 
 topic: ~lol keep repeat random (yx 游戏)
 u: ([有 有没有])
@@ -26,7 +44,7 @@ u: ([等 等等 min])
 u: (上 了)
 开开开
 
-topic: ~sleep keep repeat random (sm sml dsm dsml 失眠 sj 睡觉)
+topic: ~sleepless keep repeat random (sm sml dsm dsml 失眠 sj 睡觉)
 u: ([sm dsm sml dsml])
 [睡你麻痹，起来嗨！][不如听听郭德纲报菜名]
 u: (<< [sb 上班] [sj 睡觉] >>)
@@ -44,6 +62,14 @@ u: ([好 厉害 "这种 操作"])
 
 topic: ~fallback keep repeat random nostay ()
 u: ([竟然 居然 对吧 真是 "真的 是" 是不是])
-[你说的对！][对，你说的都对！][大哥喝冰阔落！]
-u: (["twitter . com" "sinaimg . cn"])
+[你说的对！][对，你说的都对！]
+u: (以为 * 吗)
+[就是嘛][不以为]
+u: (谁 知道)
+举手！
+  a: (*)
+  [你说啥？][溜了溜了（]
+u: ([可乐 阔落])
+[大哥喝冰阔落！][可乐加冰，双倍快乐！]
+u: (["twitter . com" "sinaimg . cn" "weibo . cn"])
 [让我看看是谁又在划水][hhhh xswl]
