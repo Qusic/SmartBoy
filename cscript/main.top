@@ -46,11 +46,23 @@ u: (上 了)
 
 topic: ~sleepless keep repeat random (sm sml dsm dsml 失眠 sj 睡觉)
 u: ([sm dsm sml dsml])
-[睡你麻痹，起来嗨！][不如听听郭德纲报菜名]
+睡你麻痹，起来嗨！
+u: ([sm dsm sml dsml])
+不如来听听郭德纲报菜名
+  a: (*)
+  有蒸羊羔
+    b: (*)
+    蒸熊掌
+      c: (*)
+      hhhh后面忘了
 u: (<< [sb 上班] [sj 睡觉] >>)
 只要胆子大 天天都放假
 
-topic: ~js keep repeat random (js ts javascript typescript coffee coffeescript)
+topic: ~iphone (iphone ios ios12 手机)
+u: ([手机 ios iphone ios12] * 流畅)
+ios12超级滑溜！！！安卓轰成灰~
+
+topic: ~js keep repeat random (js javascript)
 u: ([好 厉害 "这种 操作"])
 [世界上最好的语言][人类的希望]
 u: ([好 厉害 "这种 操作"])
