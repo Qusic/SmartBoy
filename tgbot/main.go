@@ -2,42 +2,28 @@ package main
 
 import (
 	"bufio"
-	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net"
+	"os"
 	"strings"
 	"time"
 
 	"github.com/go-telegram-bot-api/telegram-bot-api"
 )
 
-type botConfig struct {
-	Token   string `json:"token"`
-	Service string `json:"service"`
-}
-
 type tgBot struct {
-	config   botConfig
 	api      *tgbotapi.BotAPI
 	username string
 }
 
 func (bot *tgBot) load() {
-	raw, err := ioutil.ReadFile("/data/config.json")
+	token := os.Getenv("TOKEN")
+	api, err := tgbotapi.NewBotAPI(token)
 	if err != nil {
 		log.Panic(err)
 	}
-	err = json.Unmarshal(raw, &bot.config)
-	if err != nil {
-		log.Panic(err)
-	}
-
-	bot.api, err = tgbotapi.NewBotAPI(bot.config.Token)
-	if err != nil {
-		log.Panic(err)
-	}
+	bot.api = api
 }
 
 func (bot *tgBot) run() {
@@ -97,7 +83,7 @@ func (bot *tgBot) handle(update *tgbotapi.Update) {
 	queryService := func(user, text string) string {
 		var result string
 		for i := 0; i < 3; i++ {
-			conn, err := net.DialTimeout("tcp", bot.config.Service, time.Second*5)
+			conn, err := net.DialTimeout("tcp", "cscript:1024", time.Second*5)
 			if err != nil {
 				log.Print(err)
 				continue
