@@ -1,0 +1,6 @@
+package-lock.json
+node_modules
+*.log
+*.tgz
+*.swp
+.DS_Store

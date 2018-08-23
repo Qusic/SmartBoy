@@ -1,0 +1,19 @@
+{
+  "name": "smartboy",
+  "version": "1.0.0",
+  "author": "qusic",
+  "description": "A smart(?) telegram bot for fun!",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node .",
+    "test": "eslint ."
+  },
+  "dependencies": {
+    "botkit": "^0.6.16",
+    "node-telegram-bot-api": "^0.30.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0"
+  }
+}

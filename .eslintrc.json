@@ -1,0 +1,21 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "script"
+  },
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended"],
+  "rules": {
+    "indent": ["error", 2, {"SwitchCase": 1}],
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"],
+    "comma-dangle": ["error", "never"],
+    "no-empty": ["error", {"allowEmptyCatch": true}],
+    "no-unused-vars": ["error", {"args": "none", "caughtErrors": "none"}],
+    "max-len": ["error", 120],
+    "no-console": ["off"]
+  }
+}
