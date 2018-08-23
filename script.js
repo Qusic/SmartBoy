@@ -4,13 +4,13 @@ module.exports = (controller) => {
   })
 
   controller.hears(['twitter.com', 'sinaimg.cn', 'weibo.cn'], 'message_received', (bot, message) => {
-    bot.say('hhhh xswl')
+    bot.reply(message, 'hhhh xswl')
   })
 
   controller.hears(['kywkl'], 'message_received', (bot, message) => {
     bot.startConversation(message, (error, convo) => {
       convo.ask('→ https://wukongmusic.us/test', [{
-        pattern: ['不'],
+        pattern: ['不', 'bky'],
         callback: (message, convo) => {
           convo.say('为啥不可以')
           convo.next()
@@ -20,6 +20,6 @@ module.exports = (controller) => {
   })
 
   controller.on('conversationStarted', (bot, convo) => {
-    convo.setTimeout(60 * 1000)
+    convo.setTimeout(5 * 1000)
   })
 }
