@@ -35,9 +35,6 @@ module.exports = class extends Botkit.core {
       }
 
       reply(message, response, callback) {
-        if (typeof(response) != 'object') {
-          response = {text: response}
-        }
         this.say(response, callback)
       }
 
@@ -46,6 +43,7 @@ module.exports = class extends Botkit.core {
           for (const convo of task.convos) {
             if (!convo.isActive()) continue
             if (convo.source_message.user != message.user) continue
+            if (convo.source_message.channel != message.channel) continue
             if (this.botkit.excludedEvents.includes(message.type)) continue
             callback(convo)
             return
