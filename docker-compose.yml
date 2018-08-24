@@ -1,15 +1,8 @@
 version: '3'
 services:
-  tgbot:
-    image: qusic/smartboy-tgbot
+  smartboy:
+    image: qusic/smartboy
+    build: .
     restart: always
     environment:
     - TOKEN
-  cscript:
-    image: qusic/smartboy-cscript
-    restart: always
-    tty: true
-    volumes:
-    - data:/data
-volumes:
-  data:

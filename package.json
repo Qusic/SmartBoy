@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "qusic",
   "description": "A smart(?) telegram bot for fun!",
-  "main": "index.js",
+  "main": "lib/index.js",
   "private": true,
   "scripts": {
     "start": "node .",
