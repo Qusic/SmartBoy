@@ -1,16 +1,16 @@
 module.exports = (controller) => {
-  controller.hears(['竟然', '居然', '对吧', '真是', '真的是', '是不是'], 'message_received', (bot, message) => {
+  controller.hears(/(竟然|居然|对吧|真是|真的是|是不是)/iu, 'message_received', (bot, message) => {
     bot.reply(message, '你说的对！')
   })
 
-  controller.hears(['twitter.com', 'sinaimg.cn', 'weibo.cn'], 'message_received', (bot, message) => {
+  controller.hears(/(twitter.com|sinaimg.cn|weibo.cn)/iu, 'message_received', (bot, message) => {
     bot.reply(message, 'hhhh xswl')
   })
 
-  controller.hears(['kywkl'], 'message_received', (bot, message) => {
+  controller.hears(/(kywkl)/iu, 'message_received', (bot, message) => {
     bot.startConversation(message, (error, convo) => {
       convo.ask('→ https://wukongmusic.us/test', [{
-        pattern: ['不', 'bky'],
+        pattern: /(不|bky)/iu,
         callback: (message, convo) => {
           convo.say('为啥不可以')
           convo.next()

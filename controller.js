@@ -1,8 +1,8 @@
 const Botkit = require('botkit')
 
 module.exports = class extends Botkit.core {
-  constructor(connector, script, options) {
-    super(options)
+  constructor(connector, script) {
+    super(connector.options)
 
     this.middleware.spawn.use((bot, next) => {
       this.setTickDelay(100)
