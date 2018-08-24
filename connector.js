@@ -21,7 +21,7 @@ const terminal = () => {
     }
     string += ': '
     string += message.text
-    console.log(string)
+    console.log(string) // eslint-disable-line no-console
   }
 
   return {receive, send}
@@ -41,7 +41,6 @@ const telegram = (token) => {
 
   const receive = async (callback) => {
     const me = await telegram.getMe()
-    console.log(me)
     telegram.on('text', (rawMessage) => {
       const message = {
         id: rawMessage.message_id,

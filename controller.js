@@ -35,6 +35,7 @@ module.exports = class extends Botkit.core {
       }
 
       reply(message, response, callback) {
+        response.channel = message.channel
         this.say(response, callback)
       }
 
