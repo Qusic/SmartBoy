@@ -28,6 +28,8 @@ const terminal = () => {
 }
 
 const telegram = (token) => {
+  const util = require('util')
+  const timeout = util.promisify(setTimeout)
   const TelegramAPI = require('node-telegram-bot-api')
   const telegram = new TelegramAPI(token, {
     polling: {
@@ -38,6 +40,7 @@ const telegram = (token) => {
       }
     }
   })
+
 
   const receive = async (callback) => {
     const me = await telegram.getMe()
@@ -58,7 +61,7 @@ const telegram = (token) => {
     })
   }
 
-  const send = (message) => {
+  const send = async (message) => {
     const chat = message.channel
     const text = message.text
     const options = {}
@@ -66,7 +69,9 @@ const telegram = (token) => {
       options.reply_to_message_id = message.replyTo
     }
     if (text) {
-      telegram.sendMessage(chat, text, options)
+      await telegram.sendChatAction(chat, 'typing')
+      await timeout(Math.min(Math.max(text.length / 7, 1), 4) * 1000)
+      await telegram.sendMessage(chat, text, options)
     }
   }
 
