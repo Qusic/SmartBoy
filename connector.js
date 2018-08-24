@@ -1,4 +1,33 @@
-module.exports = (token) => {
+const terminal = () => {
+  const readline = require('readline')
+  const reader = readline.createInterface({input: process.stdin, output: process.stdout})
+
+  const receive = (callback) => {
+    reader.on('line', (line) => {
+      const message = {
+        channel: 'text',
+        date: Date.now(),
+        user: 'user',
+        text: line
+      }
+      callback(message)
+    })
+  }
+
+  const send = (message) => {
+    let string = 'BOT'
+    if (message.replyTo) {
+      string += `(${message.replyTo})`
+    }
+    string += ': '
+    string += message.text
+    console.log(string)
+  }
+
+  return {receive, send}
+}
+
+const telegram = (token) => {
   const TelegramAPI = require('node-telegram-bot-api')
   const telegram = new TelegramAPI(token, {
     polling: {
@@ -43,4 +72,21 @@ module.exports = (token) => {
   }
 
   return {receive, send}
+}
+
+const token = process.env.TOKEN
+if (token) {
+  module.exports = {
+    ...telegram(token),
+    options: {
+      debug: false
+    }
+  }
+} else {
+  module.exports = {
+    ...terminal(),
+    options: {
+      debug: true
+    }
+  }
 }
