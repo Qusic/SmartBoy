@@ -5,7 +5,7 @@
       "type": "node",
       "request": "launch",
       "name": "start",
-      "program": "${workspaceFolder}/index.js",
+      "program": "${workspaceFolder}/lib/index.js",
       "console": "integratedTerminal"
     }
   ]
