@@ -6,3 +6,10 @@ services:
     restart: always
     environment:
     - TOKEN
+  redis:
+    image: redis:alpine
+    restart: always
+    volumes:
+    - data:/data
+volumes:
+  data:
