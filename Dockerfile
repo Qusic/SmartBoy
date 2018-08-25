@@ -1,7 +1,8 @@
 FROM node:alpine
 
 WORKDIR /app
-COPY package.json lib ./
+COPY package.json .
 RUN npm install --production && npm audit fix
+COPY lib .
 
 CMD ["node", "."]
