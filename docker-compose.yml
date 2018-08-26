@@ -5,6 +5,8 @@ services:
     build: .
     restart: always
     environment:
+    - DEBUG
+    - LOCAL
     - TOKEN
   redis:
     image: redis:alpine
