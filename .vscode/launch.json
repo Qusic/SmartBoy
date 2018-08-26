@@ -6,7 +6,11 @@
       "request": "launch",
       "name": "start",
       "program": "${workspaceFolder}/lib/index.js",
-      "console": "integratedTerminal"
+      "console": "integratedTerminal",
+      "env": {
+        "DEBUG": "1",
+        "LOCAL": "1"
+      }
     }
   ]
 }
