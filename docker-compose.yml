@@ -3,13 +3,9 @@ services:
   smartboy:
     image: qusic/smartboy
     build: .
-    restart: always
     environment:
-    - TOKEN
+      - TOKEN
   redis:
     image: redis:alpine
-    restart: always
     volumes:
-    - data:/data
-volumes:
-  data:
+      - ./data:/data
