@@ -42,7 +42,6 @@ const dateOrigin = (date) => {
 }
 
 bot.use(Telegraf.session())
-
 bot.on('message', (context, next) => {
   const user = context.from.id
   const channel = context.chat.id
@@ -80,50 +79,6 @@ bot.mention((value, context) => value == `@${context.me}`, (context) => {
       () => context.reply('明白了，你说的太对了！', extra)
     ])()
   }
-})
-
-bot.hears(/(竟然|居然|对吧|真是|真的是|是不是)/iu, (context) => {
-  random([
-    () => context.reply('你说的对！'),
-    () => context.reply('对，你说的都对！'),
-    () => context.replyWithSticker('CAADBQADeQ8AAq4QPgXVHuXxE5x9FwI')
-  ])()
-})
-
-bot.hears(/(tql|太强了)/iu, (context) => {
-  random([
-    () => context.reply('tql!!!'),
-    () => context.reply('太强了！！！')
-  ])()
-})
-
-bot.hears(/(twitter.com|sinaimg.cn|weibo.cn)/iu, (context) => {
-  switch (dateNow().getUTCDay()) {
-    case 0:
-    case 6:
-      random([
-        () => context.reply('hhhh xswl'),
-        () => context.replyWithSticker('CAADBQADBgIAAj3XUhNLZtVI1LrXCwI'),
-        () => context.replyWithSticker('CAADBQADBwIAAj3XUhMfMkH-AgABMAgC'),
-        () => context.replyWithSticker('CAADBQADFgIAAj3XUhMzH5SHrMsKCAI'),
-        () => context.replyWithSticker('CAADBQADKgIAAj3XUhMpmzNkDgkDQgI')
-      ])()
-      break
-    default:
-      random([
-        () => context.reply('hhhh xswl'),
-        () => context.reply('让我看看是谁又在划水'),
-        () => context.replyWithSticker('CAADBQADBgIAAj3XUhNLZtVI1LrXCwI'),
-        () => context.replyWithSticker('CAADBQADBwIAAj3XUhMfMkH-AgABMAgC'),
-        () => context.replyWithSticker('CAADBQADFgIAAj3XUhMzH5SHrMsKCAI'),
-        () => context.replyWithSticker('CAADBQADKgIAAj3XUhMpmzNkDgkDQgI')
-      ])()
-      break
-  }
-})
-
-bot.hears(/生日/iu, (context) => {
-  context.scene.enter('birthday')
 })
 
 bot.use(new Telegraf.Stage([(() => {
@@ -172,6 +127,45 @@ bot.use(new Telegraf.Stage([(() => {
   })
   return scene
 })()], {ttl: 15}).middleware())
+bot.hears(/生日/iu, (context) => context.scene.enter('birthday'))
+
+bot.hears(/(竟然|居然|对吧|真是|真的是|是不是)/iu, (context) => {
+  random([
+    () => context.reply('你说的对！'),
+    () => context.reply('对，你说的都对！'),
+    () => context.replyWithSticker('CAADBQADeQ8AAq4QPgXVHuXxE5x9FwI')
+  ])()
+})
+bot.hears(/(tql|太强了)/iu, (context) => {
+  random([
+    () => context.reply('tql!!!'),
+    () => context.reply('太强了！！！')
+  ])()
+})
+bot.hears(/(twitter.com|sinaimg.cn|weibo.cn)/iu, (context) => {
+  switch (dateNow().getUTCDay()) {
+    case 0:
+    case 6:
+      random([
+        () => context.reply('hhhh xswl'),
+        () => context.replyWithSticker('CAADBQADBgIAAj3XUhNLZtVI1LrXCwI'),
+        () => context.replyWithSticker('CAADBQADBwIAAj3XUhMfMkH-AgABMAgC'),
+        () => context.replyWithSticker('CAADBQADFgIAAj3XUhMzH5SHrMsKCAI'),
+        () => context.replyWithSticker('CAADBQADKgIAAj3XUhMpmzNkDgkDQgI')
+      ])()
+      break
+    default:
+      random([
+        () => context.reply('hhhh xswl'),
+        () => context.reply('让我看看是谁又在划水'),
+        () => context.replyWithSticker('CAADBQADBgIAAj3XUhNLZtVI1LrXCwI'),
+        () => context.replyWithSticker('CAADBQADBwIAAj3XUhMfMkH-AgABMAgC'),
+        () => context.replyWithSticker('CAADBQADFgIAAj3XUhMzH5SHrMsKCAI'),
+        () => context.replyWithSticker('CAADBQADKgIAAj3XUhMpmzNkDgkDQgI')
+      ])()
+      break
+  }
+})
 
 bot.launch().then(async () => {
   for (;;) {
