@@ -1,8 +1,4 @@
 package-lock.json
 node_modules
-*.log
-*.tgz
 *.swp
-/.env
-/data
 .DS_Store
