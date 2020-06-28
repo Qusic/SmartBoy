@@ -1,6 +1,7 @@
 const Telegraf = require('telegraf')
 const Redis = require('redis')
 const {promisify} = require('util')
+const http = require('http')
 
 const {TOKEN, REDIS} = process.env
 const bot = new Telegraf(TOKEN)
@@ -244,3 +245,12 @@ bot.launch().then(async () => {
     }
   }
 })
+
+http.createServer((request, response) => {
+  const user = request.headers['x-telegram-auth']
+  if (user) {
+    response.end(`Hello, ${user}!`)
+  } else {
+    response.end('I don\'t know you.')
+  }
+}).listen(8080)
