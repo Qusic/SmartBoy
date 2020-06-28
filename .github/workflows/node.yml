@@ -1,0 +1,22 @@
+name: Node
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npm test
+      - uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: qusic/smartboy/app
+          tags: latest
