@@ -1,3 +1,5 @@
+/.vscode
+/.devcontainer
 package-lock.json
 node_modules
 *.swp
