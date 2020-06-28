@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "redis": "^3.0.2",
-    "telegraf": "^3.37.0"
+    "telegraf": "^3.38.0"
   },
   "devDependencies": {
-    "eslint": "^6.8.0"
+    "eslint": "^7.3.1"
   }
 }
