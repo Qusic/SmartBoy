@@ -4,7 +4,7 @@
   "author": "qusic",
   "description": "A smart(?) telegram bot for fun!",
   "private": true,
-  "main": "index.js",
+  "main": "lib",
   "type": "module",
   "engines": {
     "node": ">=15.0.0"
