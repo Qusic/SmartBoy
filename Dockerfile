@@ -1,5 +1,7 @@
 FROM node:alpine
+RUN apk add --no-cache curl ffmpeg
 WORKDIR /app
 COPY . .
 RUN npm install --production
-CMD ["node", "."]
+WORKDIR /data
+CMD ["node", "/app"]
