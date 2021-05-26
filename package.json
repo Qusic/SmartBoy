@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "koa": "^2.13.1",
-    "NeteaseCloudMusicApi": "^4.0.12",
+    "NeteaseCloudMusicApi": "^4.0.13",
     "redis": "^3.1.2",
     "telegraf": "^4.3.0"
   },
@@ -26,7 +26,8 @@
   },
   "eslintConfig": {
     "parserOptions": {
-      "sourceType": "module"
+      "sourceType": "module",
+      "ecmaVersion": 2020
     },
     "env": {
       "es2020": true,
