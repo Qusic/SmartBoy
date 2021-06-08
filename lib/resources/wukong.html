@@ -4,11 +4,34 @@
     <script src="https://unpkg.com/hls.js/dist/hls.light.min.js"></script>
   </head>
   <body>
-    <audio autoplay controls />
+    <audio controls></audio>
+    <button data-data="play.m3u8">Play</button>
+    <button data-data="hd.m3u8">HD</button>
+    <button data-data="sd.m3u8">SD</button>
     <script>
-      hls = new Hls()
-      hls.attachMedia(document.querySelector('audio'))
-      hls.on(Hls.Events.MEDIA_ATTACHED, () => hls.loadSource('play.m3u8'))
+      const hls = new Hls()
+      const audio = document.querySelector('audio')
+      hls.attachMedia(audio)
+      {
+        const key = 'wk-volume'
+        const value = parseFloat(localStorage.getItem(key))
+        if (!isNaN(value)) audio.volume = value
+        audio.addEventListener('volumechange', () => {
+          localStorage.setItem(key, audio.volume.toFixed(2))
+        })
+      }
+      {
+        document.querySelectorAll('button').forEach((button) => {
+          button.addEventListener('click', (event) => {
+            hls.loadSource(event.currentTarget.dataset.data)
+          })
+        })
+      }
     </script>
+    <style>
+      audio {
+        display: block;
+      }
+    </style>
   </body>
 </html>
