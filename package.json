@@ -7,35 +7,32 @@
   "main": "lib",
   "type": "module",
   "engines": {
-    "node": ">=15.0.0"
+    "node": ">=16.10.0"
   },
   "scripts": {
     "start": "node .",
     "test": "eslint . && prettier -c ."
   },
   "dependencies": {
-    "koa": "^2.13.1",
-    "NeteaseCloudMusicApi": "^4.0.16",
-    "redis": "^3.1.2",
-    "telegraf": "^4.3.0"
+    "koa": "^2.13.3",
+    "lowdb": "^3.0.0",
+    "NeteaseCloudMusicApi": "^4.0.23",
+    "telegraf": "^4.4.2"
   },
   "devDependencies": {
-    "eslint": "^7.28.0",
-    "eslint-plugin-node": "^11.1.0",
-    "prettier": "^2.3.1"
+    "eslint": "^7.32.0",
+    "prettier": "^2.4.1"
   },
   "eslintConfig": {
     "parserOptions": {
-      "sourceType": "module",
-      "ecmaVersion": 2020
+      "sourceType": "module"
     },
     "env": {
-      "es2020": true,
+      "es2021": true,
       "node": true
     },
     "extends": [
-      "eslint:recommended",
-      "plugin:node/recommended"
+      "eslint:recommended"
     ]
   },
   "prettier": {
