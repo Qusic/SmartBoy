@@ -10,18 +10,19 @@
     "node": ">=16.10.0"
   },
   "scripts": {
-    "start": "mkdir -p data && cd data && node ..",
+    "start": "shx mkdir -p data && cd data && node ..",
     "test": "eslint . && prettier -c ."
   },
   "dependencies": {
     "koa": "^2.13.4",
-    "lowdb": "^3.0.0",
-    "NeteaseCloudMusicApi": "^4.2.0",
-    "telegraf": "^4.6.0"
+    "lowdb": "^5.0.5",
+    "NeteaseCloudMusicApi": "^4.8.2",
+    "telegraf": "^4.10.0"
   },
   "devDependencies": {
-    "eslint": "^8.7.0",
-    "prettier": "^2.5.1"
+    "eslint": "^8.27.0",
+    "prettier": "^2.7.1",
+    "shx": "^0.3.4"
   },
   "eslintConfig": {
     "parserOptions": {
