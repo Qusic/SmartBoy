@@ -14,15 +14,16 @@
     "test": "eslint . && prettier -c ."
   },
   "dependencies": {
-    "koa": "^2.14.1",
-    "lowdb": "^5.0.5",
-    "NeteaseCloudMusicApi": "^4.8.9",
-    "telegraf": "^4.11.2"
+    "@azure/data-tables": "^13.2.2",
+    "koa": "^2.14.2",
+    "lowdb": "^6.0.1",
+    "NeteaseCloudMusicApi": "^4.8.10",
+    "telegraf": "^4.12.2"
   },
   "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
-    "eslint": "^8.32.0",
-    "prettier": "^2.8.3",
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "eslint": "^8.41.0",
+    "prettier": "^2.8.8",
     "shx": "^0.3.4"
   },
   "eslintConfig": {
@@ -30,7 +31,7 @@
       "sourceType": "module"
     },
     "env": {
-      "es2021": true,
+      "es2022": true,
       "node": true
     },
     "extends": [
