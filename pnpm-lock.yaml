@@ -20,6 +20,9 @@ dependencies:
   openai:
     specifier: ^4.2.0
     version: 4.2.0
+  proxy-agent:
+    specifier: ^6.3.0
+    version: 6.3.0
   telegraf:
     specifier: ^4.12.2
     version: 4.12.2
@@ -1557,6 +1560,11 @@ packages:
       steno: 3.0.0
     dev: false
 
+  /lru-cache@7.18.3:
+    resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
+    engines: {node: '>=12'}
+    dev: false
+
   /md5@2.3.0:
     resolution: {integrity: sha512-T1GITYmFaKuO91vxyoQMFETst+O71VUPEU3ze5GNzDm0OWdP8v1ziTaAEPUr/3kLsY3Sftgz242A1SetQiDL7g==}
     dependencies:
@@ -1859,6 +1867,22 @@ packages:
     dependencies:
       forwarded: 0.2.0
       ipaddr.js: 1.9.1
+    dev: false
+
+  /proxy-agent@6.3.0:
+    resolution: {integrity: sha512-0LdR757eTj/JfuU7TL2YCuAZnxWXu3tkJbg4Oq3geW/qFNT/32T0sp2HnZ9O0lMR4q3vwAt0+xCA8SR0WAD0og==}
+    engines: {node: '>= 14'}
+    dependencies:
+      agent-base: 7.1.0
+      debug: 4.3.4
+      http-proxy-agent: 7.0.0
+      https-proxy-agent: 7.0.1
+      lru-cache: 7.18.3
+      pac-proxy-agent: 7.0.0
+      proxy-from-env: 1.1.0
+      socks-proxy-agent: 8.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /proxy-from-env@1.1.0:
