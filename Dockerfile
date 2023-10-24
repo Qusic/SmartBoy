@@ -1,9 +1,9 @@
 FROM node:alpine
-RUN apk add --no-cache ffmpeg
+RUN corepack enable && corepack install --global pnpm@latest
+RUN apk add --no-cache --upgrade ffmpeg
 WORKDIR /app
-COPY package.json .
-RUN npm install --omit=dev \
- && chown -R $(id -u):$(id -g) node_modules # workaround for https://github.com/npm/cli/issues/5900
-COPY lib lib
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile --prod
+COPY . .
 WORKDIR /data
 CMD ["node", "/app"]
