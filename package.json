@@ -11,17 +11,17 @@
     "test": "eslint . && prettier -c ."
   },
   "dependencies": {
-    "NeteaseCloudMusicApi": "^4.14.0",
-    "koa": "^2.14.2",
-    "lowdb": "^6.1.1",
-    "openai": "^4.24.0",
-    "proxy-agent": "^6.3.1",
+    "NeteaseCloudMusicApi": "^4.15.3",
+    "koa": "^2.15.0",
+    "lowdb": "^7.0.1",
+    "openai": "^4.28.0",
+    "proxy-agent": "^6.4.0",
     "telegraf": "^4.15.3"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "eslint": "^8.56.0",
-    "prettier": "^3.1.1"
+    "prettier": "^3.2.5"
   },
   "eslintConfig": {
     "parserOptions": {
