@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "NeteaseCloudMusicApi": "^4.15.3",
-    "koa": "^2.15.0",
+    "koa": "^3.0.1",
     "lowdb": "^7.0.1",
     "openai": "^4.28.0",
     "proxy-agent": "^6.4.0",
